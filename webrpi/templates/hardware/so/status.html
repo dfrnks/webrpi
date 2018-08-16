@@ -1,0 +1,55 @@
+
+{% extends "layout.html" %}
+
+{% block title %}SO{% endblock %}
+
+{% block head %}
+{{ super() }}
+<style type="text/css">
+    .important { color: #336699; }
+</style>
+{% endblock %}
+
+{% block container %}
+<table class="u-full-width">
+    <thead>
+        <th>Info</th>
+        <th>Value</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>platform:</td>
+        <td>{{data.platform[0]}}, {{data.platform[1]}}, {{data.platform[2]}}</td>
+    </tr>
+    <tr>
+        <td>architecture:</td>
+        <td>{{data.architecture[0]}}, {{data.architecture[1]}}</td>
+    </tr>
+    <tr>
+        <td>system:</td>
+        <td>{{data.system}}</td>
+    </tr>
+    <tr>
+        <td>node:</td>
+        <td>{{data.node}}</td>
+    </tr>
+    <tr>
+        <td>release:</td>
+        <td>{{data.release}}</td>
+    </tr>
+    <tr>
+        <td>version:</td>
+        <td>{{data.version}}</td>
+    </tr>
+    <tr>
+        <td>machine:</td>
+        <td>{{data.machine}}</td>
+    </tr>
+    <tr>
+        <td>processor:</td>
+        <td>{{data.processor}}</td>
+    </tr>
+    </tbody>
+</table>
+
+{% endblock %}

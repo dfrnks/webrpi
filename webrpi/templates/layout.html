@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}">
+    <title>{% block title %}{% endblock %} - RPI</title>
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+{% block container %}{% endblock %}
+</div>
+</body>
+</html>
