@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+
+{% block title %}SO{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+
+{% block container %}
+    <form method="post">
+        <div class="row">
+            <div class="columns">
+                <label for="exampleEmailInput">Username</label>
+                <input class="u-full-width" type="text" name="username" id="username">
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns">
+                <label for="exampleEmailInput">Password</label>
+                <input class="u-full-width" type="password" name="password" id="password">
+            </div>
+        </div>
+        {% if error %}
+            <pre>{{ error }}</pre><br>
+        {% endif %}
+        <input class="button-primary" type="submit" value="Submit">
+    </form>
+{% endblock %}
