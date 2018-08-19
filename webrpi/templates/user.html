@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block container %}
+    <form method="post">
+        <div class="row">
+            <div class="columns">
+                <label>Username</label>
+                <input class="u-full-width" type="text" name="username" value="{{ user.username }}" id="username">
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns">
+                <label>Password</label>
+                <input class="u-full-width" type="password" name="password" value="{{ user.password }}" id="password">
+            </div>
+        </div>
+        {% if error %}
+            <pre>{{ error }}</pre><br>
+        {% endif %}
+        <input class="button-primary" type="submit" value="Save">
+    </form>
+{% endblock %}

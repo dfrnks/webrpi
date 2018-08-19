@@ -2,15 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/github-prettify-theme.css') }}">
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
     <title>{% block title %}{% endblock %} - RPI</title>
     {% endblock %}
 </head>
 <body>
 <div class="container">
-{% block container %}{% endblock %}
+    <div class="navbar-spacer"></div>
+    <nav class="navbar">
+        <div class="container">
+            <ul class="navbar-list">
+                <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="#" data-popover="#hardwareNavPopover">Hardware</a>
+                    <div id="hardwareNavPopover" class="popover">
+                        <ul class="popover-list">
+                            <li class="popover-item">
+                                <a class="popover-link" href="/hardware/status">Status</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="navbar-item navbar-right"><a class="navbar-link" href="/logout">logout</a></li>
+                <li class="navbar-item navbar-right"><a class="navbar-link" href="/user">{{ session.username }}</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+    {% block container %}{% endblock %}
+    </div>
 </div>
 </body>
 </html>
