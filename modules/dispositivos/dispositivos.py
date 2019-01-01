@@ -9,6 +9,6 @@ def active(id):
     if 'active' not in session:
         return redirect(url_for('login'))
 
-    time.sleep(2) # DO Something
+    time.sleep(2)  # DO Something
 
     return redirect(url_for('index'))
