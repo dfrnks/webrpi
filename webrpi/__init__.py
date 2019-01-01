@@ -8,4 +8,5 @@ app.secret_key = b'H^a/$-re8SRJ9kZe*(u)u/%{3H~Z\\\O'
 db.init_app(app)
 
 import modules.hardware.so
+import modules.dispositivos.dispositivos
 import webrpi.views

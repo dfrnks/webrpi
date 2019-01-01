@@ -10,6 +10,7 @@ def index():
         return redirect(url_for('login'))
     return render_template('index.html')
 
+
 @app.route('/user', methods=['GET', 'POST'])
 def user():
     if request.method == 'POST':
@@ -20,6 +21,7 @@ def user():
     user = db().execute('SELECT * FROM user where username = ?', (session['username'], )).fetchone()
 
     return render_template('user.html', user=user)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -36,6 +38,7 @@ def login():
             error = 'Invalid username/password'
 
     return render_template('login.html', error=error)
+
 
 @app.route('/logout')
 def logout():
